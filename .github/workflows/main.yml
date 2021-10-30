@@ -25,7 +25,18 @@ jobs:
         mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
         mysql password: 1234567890 # Required if "mysql user" exists. The password for the "mysql user"
     
-    - uses: yaananth/run-notebook@v1
+    - name: create env file
+      run: |
+        echo $'USER=developer\nPASSWORD=1234567890' > .env
+        cat .env
+
+    - name: Download data
+      run: echo 'todo'
+        # wget google.com
+        # unzip xxx -o data/
+
+    - name: run notebook
+      uses: yaananth/run-notebook@v1
       env:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
