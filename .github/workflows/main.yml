@@ -32,8 +32,8 @@ jobs:
 
     - name: Download data
       run: |
-        wget https://7iigkr42.eu-central-1.linodeobjects.com/data.zip
-        unzip data.zip -d data/
+        wget -nv https://7iigkr42.eu-central-1.linodeobjects.com/data.zip
+        unzip data.zip 
 
     - name: Run notebook
       uses: yaananth/run-notebook@v1
