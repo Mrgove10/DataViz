@@ -45,4 +45,3 @@ jobs:
         notebook: "PATHTONOTEBOOK.ipynb"
         params: "PATHTOPARAMS.json"
         isReport: False
-        poll: True
